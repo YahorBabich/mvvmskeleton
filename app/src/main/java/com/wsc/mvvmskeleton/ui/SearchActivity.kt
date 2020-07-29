@@ -2,8 +2,8 @@ package com.wsc.mvvmskeleton.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.wsc.mvvmskeleton.R
 import com.wsc.mvvmskeleton.databinding.ActivitySearchBinding
+import com.wsc.mvvmskeleton.extension.observe
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchActivity : AppCompatActivity() {
@@ -14,10 +14,20 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivitySearchBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_search)
+        setContentView(binding.root)
 
-        binding.button.setOnClickListener {
-
+        viewModel.apply {
+            observe(data, ::display)
         }
+
+        binding.add.setOnClickListener {
+            viewModel.perform("1")
+        }
+
     }
+
+    private fun display(value: String?) {
+        binding.result.text = value
+    }
+
 }
