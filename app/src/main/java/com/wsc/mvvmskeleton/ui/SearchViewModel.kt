@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SearchViewModel : ViewModel() {
+class SearchViewModel(private val searchRepository: SearchRepository) : ViewModel() {
 
     private val _data = MutableLiveData<String>()
     val data: LiveData<String> = _data

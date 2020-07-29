@@ -1,6 +1,7 @@
 package com.wsc.mvvmskeleton
 
 import android.app.Application
+import com.wsc.mvvmskeleton.di.repositoryModule
 import com.wsc.mvvmskeleton.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -15,7 +16,7 @@ class SkeletonApplication : Application() {
             androidLogger()
             androidContext(this@SkeletonApplication)
             modules(
-                listOf(viewModelModule)
+                listOf(repositoryModule, viewModelModule)
             )
         }
     }
