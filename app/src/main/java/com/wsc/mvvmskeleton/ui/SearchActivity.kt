@@ -20,14 +20,13 @@ class SearchActivity : AppCompatActivity() {
             observe(data, ::display)
         }
 
-        binding.add.setOnClickListener {
-            viewModel.perform("1")
+        binding.get.setOnClickListener {
+            viewModel.perform()
         }
-
     }
 
     private fun display(value: String?) {
-        binding.result.text = value
+        //binding.result.text = value
     }
 
 }

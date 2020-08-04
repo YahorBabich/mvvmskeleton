@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wsc.mvvmskeleton">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".SkeletonApplication"
         android:allowBackup="true"

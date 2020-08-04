@@ -1,6 +1,8 @@
 package com.wsc.mvvmskeleton
 
 import android.app.Application
+import com.facebook.stetho.Stetho
+import com.wsc.mvvmskeleton.di.networkModule
 import com.wsc.mvvmskeleton.di.repositoryModule
 import com.wsc.mvvmskeleton.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -16,8 +18,12 @@ class SkeletonApplication : Application() {
             androidLogger()
             androidContext(this@SkeletonApplication)
             modules(
-                listOf(repositoryModule, viewModelModule)
+                listOf(networkModule, repositoryModule, viewModelModule)
             )
+        }
+
+        if (BuildConfig.DEBUG) {
+            Stetho.initializeWithDefaults(this);
         }
     }
 }
