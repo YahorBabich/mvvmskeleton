@@ -1,6 +1,7 @@
 package com.wsc.mvvmskeleton.ui
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.wsc.mvvmskeleton.databinding.ActivitySearchBinding
 import com.wsc.mvvmskeleton.extension.observe
@@ -25,8 +26,7 @@ class SearchActivity : AppCompatActivity() {
         }
     }
 
-    private fun display(value: String?) {
-        //binding.result.text = value
+    private fun display(value: Int?) {
+        Toast.makeText(this, "$value posts were added/replaced", Toast.LENGTH_SHORT).show()
     }
-
 }

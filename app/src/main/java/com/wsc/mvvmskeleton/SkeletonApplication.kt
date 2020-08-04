@@ -2,6 +2,7 @@ package com.wsc.mvvmskeleton
 
 import android.app.Application
 import com.facebook.stetho.Stetho
+import com.wsc.mvvmskeleton.di.databaseModules
 import com.wsc.mvvmskeleton.di.networkModule
 import com.wsc.mvvmskeleton.di.repositoryModule
 import com.wsc.mvvmskeleton.di.viewModelModule
@@ -18,7 +19,7 @@ class SkeletonApplication : Application() {
             androidLogger()
             androidContext(this@SkeletonApplication)
             modules(
-                listOf(networkModule, repositoryModule, viewModelModule)
+                listOf(databaseModules, networkModule, repositoryModule, viewModelModule)
             )
         }
 
