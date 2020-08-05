@@ -1,13 +1,15 @@
 package com.wsc.mvvmskeleton.network
 
 import com.wsc.mvvmskeleton.data.Post
+import io.reactivex.Single
 import retrofit2.http.GET
 
 interface ApiService {
 
     @GET("posts")
-    suspend fun posts(): ApiResponse<ApiError, List<Post>>
+    suspend fun postsWithCoroutines(): ApiResponse<ApiError, List<Post>>
 
-    /*@GET("/search")
-    fun search(@Query("term") term: String): ApiResponse<ApiError, KeywordSuggestions>*/
+    @GET("posts")
+    //  fun postsWithRx(): ApiResponse<ApiError, List<Post>>
+    fun postsWithRx(): Single<List<Post>>
 }

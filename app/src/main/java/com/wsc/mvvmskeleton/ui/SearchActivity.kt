@@ -21,8 +21,12 @@ class SearchActivity : AppCompatActivity() {
             observe(data, ::display)
         }
 
-        binding.get.setOnClickListener {
-            viewModel.perform()
+        binding.getWithCoroutines.setOnClickListener {
+            viewModel.performWithCoroutines()
+        }
+
+        binding.getWithRx.setOnClickListener {
+            viewModel.performWithRx()
         }
     }
 
