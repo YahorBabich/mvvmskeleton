@@ -1,7 +1,6 @@
 package com.wsc.mvvmskeleton.ui
 
 import android.util.Log
-import androidx.annotation.CallSuper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
