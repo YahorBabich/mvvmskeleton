@@ -10,6 +10,5 @@ interface ApiService {
     suspend fun postsWithCoroutines(): ApiResponse<ApiError, List<Post>>
 
     @GET("posts")
-    //  fun postsWithRx(): ApiResponse<ApiError, List<Post>>
     fun postsWithRx(): Single<List<Post>>
 }
